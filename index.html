@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumi Drums - The Power of Rhythm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="tumi_logo_new.png" alt="Tumi Drums" class="logo-img">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#products" class="nav-link">Our Drums</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link cart-link">🛒 Cart (<span id="cart-count">0</span>)</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>Experience the Spirit of Africa in Every Beat</h1>
+            <p>Authentic, hand-carved Ghanaian drums crafted by master artisans.</p>
+            <div class="hero-actions">
+                <a href="#products" class="btn primary">Order Now</a>
+                <a href="#products" class="btn secondary">Explore Our Collection</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="products" class="products-section">
+        <h2>Our Drums</h2>
+        <div class="product-grid">
+            <!-- Products will be dynamically added here -->
+        </div>
+        <div class="product-cta">
+            <a href="#contact" class="btn primary">Click to Order</a>
+            <a href="#contact" class="btn secondary">Ask About Custom Orders</a>
+        </div>
+    </section>
+
+    <!-- Additional Drums Section -->
+    <section class="additional-drums-section">
+        <h2>More Drums Available</h2>
+        <p class="section-subtitle">Contact us for these additional traditional Ghanaian drums</p>
+        <div class="drums-list">
+            <div class="drum-item">
+                <img src="fontomfrom.jpg" alt="Fontomfrom" class="drum-thumb">
+                <div class="drum-info">
+                    <h4>Fontomfrom</h4>
+                    <p>Royal ceremonial drum used in traditional courts</p>
+                    <span class="price">$220</span>
+                    <button class="btn-small add-to-cart-additional" data-name="Fontomfrom" data-price="220">Add to Cart</button>
+                </div>
+            </div>
+            <div class="drum-item">
+                <img src="donno.jpg" alt="Donno" class="drum-thumb">
+                <div class="drum-info">
+                    <h4>Donno (Talking Drum)</h4>
+                    <p>Hourglass-shaped pressure drum for communication</p>
+                    <span class="price">$185</span>
+                    <button class="btn-small add-to-cart-additional" data-name="Donno (Talking Drum)" data-price="185">Add to Cart</button>
+                </div>
+            </div>
+            <div class="drum-item">
+                <img src="brekete.jpg" alt="Brekete" class="drum-thumb">
+                <div class="drum-info">
+                    <h4>Brekete</h4>
+                    <p>Large bass drum for traditional ensembles</p>
+                    <span class="price">$280</span>
+                    <button class="btn-small add-to-cart-additional" data-name="Brekete" data-price="280">Add to Cart</button>
+                </div>
+            </div>
+            <div class="drum-item">
+                <img src="nagara.jpg" alt="Nagara" class="drum-thumb">
+                <div class="drum-info">
+                    <h4>Nagara</h4>
+                    <p>Northern Ghana ceremonial drum</p>
+                    <span class="price">$195</span>
+                    <button class="btn-small add-to-cart-additional" data-name="Nagara" data-price="195">Add to Cart</button>
+                </div>
+            </div>
+            <div class="drum-item">
+                <img src="dawuro.png" alt="Dawuro" class="drum-thumb">
+                <div class="drum-info">
+                    <h4>Dawuro</h4>
+                    <p>Metal bell used in traditional music</p>
+                    <span class="price">$45</span>
+                    <button class="btn-small add-to-cart-additional" data-name="Dawuro" data-price="45">Add to Cart</button>
+                </div>
+            </div>
+            <div class="drum-item">
+                <img src="frikyiwa.jpg" alt="Frikyiwa" class="drum-thumb">
+                <div class="drum-info">
+                    <h4>Frikyiwa</h4>
+                    <p>Small supporting drum for rhythmic patterns</p>
+                    <span class="price">$95</span>
+                    <button class="btn-small add-to-cart-additional" data-name="Frikyiwa" data-price="95">Add to Cart</button>
+                </div>
+            </div>
+            <div class="drum-item">
+                <img src="petia.jpg" alt="Petia" class="drum-thumb">
+                <div class="drum-info">
+                    <h4>Petia</h4>
+                    <p>Square frame drum with goatskin head</p>
+                    <span class="price">$125</span>
+                    <button class="btn-small add-to-cart-additional" data-name="Petia" data-price="125">Add to Cart</button>
+                </div>
+            </div>
+            <div class="drum-item">
+                <img src="seperewa.jpg" alt="Seperewa" class="drum-thumb">
+                <div class="drum-info">
+                    <h4>Seperewa</h4>
+                    <p>Traditional harp-lute (10-string)</p>
+                    <span class="price">$350</span>
+                    <button class="btn-small add-to-cart-additional" data-name="Seperewa" data-price="350">Add to Cart</button>
+                </div>
+            </div>
+            <div class="drum-item">
+                <img src="gyil.jpg" alt="Gyil" class="drum-thumb">
+                <div class="drum-info">
+                    <h4>Xylophone (Gyil)</h4>
+                    <p>Traditional wooden xylophone with gourd resonators</p>
+                    <span class="price">$450</span>
+                    <button class="btn-small add-to-cart-additional" data-name="Xylophone (Gyil)" data-price="450">Add to Cart</button>
+                </div>
+            </div>
+            <div class="drum-item">
+                <img src="shekere.jpg" alt="Shekere" class="drum-thumb">
+                <div class="drum-info">
+                    <h4>Shekere</h4>
+                    <p>Gourd shaker with beaded net</p>
+                    <span class="price">$65</span>
+                    <button class="btn-small add-to-cart-additional" data-name="Shekere" data-price="65">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="additional-drums-cta">
+            <a href="#contact" class="btn primary">Inquire About These Drums</a>
+            <p class="note">All drums are handcrafted by skilled artisans using traditional methods</p>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>Tumi Drums is a Ghanaian drum-making initiative by MLC Solutions (GH), proudly preserving and promoting the rich tradition of African percussion.</p>
+        <h3>Our Mission</h3>
+        <p>We empower local artisans, promote cultural heritage, and share Africa's rhythmic soul with the world. Every drum is handcrafted using sustainable materials and ancient techniques passed down for generations.</p>
+        <h3>Impact</h3>
+        <p>We support over 20 artisans and youth apprentices across Ghana. Your purchase directly fuels cultural preservation and economic empowerment.</p>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+        <h2>Testimonials</h2>
+        <div class="testimonial-carousel">
+            <div class="testimonial-item">
+                <p>“The craftsmanship is amazing! The Djembe sounds incredible and the attention to detail is unmatched.”</p>
+                <p class="author">— Malik A., USA</p>
+            </div>
+            <div class="testimonial-item">
+                <p>“I teach music, and the Atumpan I received from Tumi Drums has been a classroom favorite. Authentic and educational!”</p>
+                <p class="author">— Linda O., UK</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>WhatsApp: +233544311096</p>
+        <p>Email: info@mlcsolutionsgh@gmail.com</p>
+        <p>Shipping: Local and international shipping available (7–14 days delivery)</p>
+        <div class="contact-cta">
+            <a href="https://wa.me/233544311096" class="btn primary" target="_blank">Message Us on WhatsApp</a>
+            <a href="#" class="btn secondary">Request Our Catalog</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Tumi Drums by MLC Solutions (GH) – Bringing Africa's heartbeat to the world, one drum at a time.</p>
+        <p class="copyright">© 2025 MLC Solutions (GH). All rights reserved.</p>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: $<span id="cart-total">0.00</span></strong>
+            </div>
+            <button class="btn primary checkout-btn" onclick="openCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Checkout</h2>
+                <button class="close-modal" onclick="closeCheckout()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="checkout-section">
+                    <h3>Order Summary</h3>
+                    <div id="checkout-items" class="checkout-items">
+                        <!-- Order items will be displayed here -->
+                    </div>
+                    <div class="checkout-total">
+                        <strong>Total: $<span id="checkout-total">0.00</span></strong>
+                    </div>
+                </div>
+                
+                <div class="checkout-section">
+                    <h3>Shipping Information</h3>
+                    <form id="shipping-form">
+                        <div class="form-row">
+                            <input type="text" id="full-name" placeholder="Full Name" required>
+                            <input type="email" id="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" id="phone" placeholder="Phone Number" required>
+                            <input type="text" id="country" placeholder="Country" required>
+                        </div>
+                        <textarea id="address" placeholder="Full Address" required></textarea>
+                    </form>
+                </div>
+
+                <div class="checkout-section">
+                    <h3>Payment Method</h3>
+                    <div class="payment-methods">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="card" checked>
+                            <span>💳 Credit/Debit Card</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="bank">
+                            <span>🏦 Direct Bank Transfer</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="momo">
+                            <span>📱 Mobile Money</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="paypal">
+                            <span>💰 PayPal</span>
+                        </label>
+                    </div>
+                    
+                    <!-- Payment Details -->
+                    <div id="payment-details">
+                        <div id="card-details" class="payment-form">
+                            <div class="form-row">
+                                <input type="text" placeholder="Card Number" maxlength="19">
+                                <input type="text" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-row">
+                                <input type="text" placeholder="Cardholder Name">
+                                <input type="text" placeholder="CVV" maxlength="4">
+                            </div>
+                        </div>
+                        
+                        <div id="bank-details" class="payment-form" style="display: none;">
+                            <p><strong>Bank Transfer Details:</strong></p>
+                            <p>Account Name: MLC Solutions (GH)<br>
+                            Bank: [Bank Name]<br>
+                            Account Number: [Account Number]<br>
+                            Swift Code: [Swift Code]</p>
+                            <small>Please transfer the total amount and send proof of payment to our WhatsApp.</small>
+                        </div>
+                        
+                        <div id="momo-details" class="payment-form" style="display: none;">
+                            <select id="momo-provider">
+                                <option value="">Select Mobile Money Provider</option>
+                                <option value="mtn">MTN Mobile Money</option>
+                                <option value="vodafone">Vodafone Cash</option>
+                                <option value="airteltigo">AirtelTigo Money</option>
+                            </select>
+                            <input type="tel" placeholder="Mobile Money Number" id="momo-number">
+                        </div>
+                        
+                        <div id="paypal-details" class="payment-form" style="display: none;">
+                            <p>You will be redirected to PayPal to complete your payment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn secondary" onclick="closeCheckout()">Cancel</button>
+                <button class="btn primary" onclick="processPayment()">Complete Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
