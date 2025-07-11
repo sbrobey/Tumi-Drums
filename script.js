@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <p class="price">${product.price}</p>
                 <div class="product-buttons">
                     <button class="btn sound-btn" onclick="playDrumSound('${product.name.toLowerCase().replace(/[^a-z0-9]/g, '')}')">🔊 Play Sound</button>
-                    <button class="btn primary add-to-cart-btn" onclick="addToCart('${product.name}', '${product.price}', '${product.image}')">Add to Cart</button>
+                    <button class="btn primary add-to-cart-btn" onclick="addToCart({name: '${product.name}', price: '${product.price}', image: '${product.image}'})">Add to Cart</button>
                     <a href="#contact" class="btn secondary">Contact Us</a>
                 </div>
             </div>
@@ -60,28 +60,52 @@ document.addEventListener("DOMContentLoaded", function() {
         productGrid.appendChild(productCard);
     });
 
-    // Mobile Navigation Toggle
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.querySelector(".nav-menu");
-
-    hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
-    });
-
-    document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        navMenu.classList.remove("active");
-    }));
-
+    // Initialize mobile navigation
+    initializeMobileNavigation();
+    
     // Initialize cart functionality
     initializeCartFunctionality();
 });
 
+// Mobile Navigation Functionality
+function initializeMobileNavigation() {
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", function() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Close mobile menu when clicking on a nav link
+        document.querySelectorAll(".nav-link").forEach(link => {
+            link.addEventListener("click", function() {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            });
+        });
+    }
+}
+
 // Shopping Cart Functionality
 let cart = [];
 
-function addToCart(name, price, image) {
+function addToCart(product) {
+    // Handle both object and individual parameters for backward compatibility
+    let name, price, image;
+    
+    if (typeof product === 'object') {
+        name = product.name;
+        price = product.price;
+        image = product.image;
+    } else {
+        // For backward compatibility with old function calls
+        name = arguments[0];
+        price = arguments[1];
+        image = arguments[2];
+    }
+    
     // Parse price (remove $ and convert to number)
     const numericPrice = parseFloat(price.replace('$', '').replace('+', ''));
     
@@ -194,7 +218,9 @@ function showCartNotification(itemName) {
     setTimeout(() => {
         notification.style.animation = 'slideOutRight 0.3s ease';
         setTimeout(() => {
-            document.body.removeChild(notification);
+            if (document.body.contains(notification)) {
+                document.body.removeChild(notification);
+            }
         }, 300);
     }, 2000);
 }
@@ -209,7 +235,11 @@ function initializeCartFunctionality() {
             const price = parseFloat(this.getAttribute('data-price'));
             const image = this.closest('.drum-item').querySelector('.drum-thumb').src;
             
-            addToCart(name, '$' + price, image);
+            addToCart({
+                name: name,
+                price: '$' + price,
+                image: image
+            });
             
             // Visual feedback
             const originalText = this.textContent;
@@ -400,36 +430,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-if (hamburger) {
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-}
-
-// Close mobile menu when clicking on a nav link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
-
 // Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
 });
 
@@ -490,7 +503,9 @@ function showAudioMessage(drumType) {
     
     // Remove message after 2 seconds
     setTimeout(() => {
-        document.body.removeChild(message);
+        if (document.body.contains(message)) {
+            document.body.removeChild(message);
+        }
     }, 2000);
 }
 
